@@ -5,7 +5,14 @@
 			{
 				"name": "Copy Population Data",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Check if FIle Exist",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.00:05:00",
 					"retry": 3,
@@ -59,6 +66,21 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Check if FIle Exist",
+				"type": "Validation",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "ds_population_raw_gz",
+						"type": "DatasetReference"
+					},
+					"timeout": "0.00:00:30",
+					"sleep": 10,
+					"minimumSize": 1024
+				}
 			}
 		],
 		"annotations": []
