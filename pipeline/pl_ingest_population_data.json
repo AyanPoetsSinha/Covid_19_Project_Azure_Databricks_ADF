@@ -44,8 +44,28 @@
 							"fileExtension": ".txt"
 						}
 					},
-					"enableStaging": false
-				}
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_blob_storageacc_populationgz",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_adls_tsv_raw",
+						"type": "DatasetReference"
+					}
+				]
 			},
 			{
 				"name": "Check if FIle Exist",
@@ -53,8 +73,13 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"dataset": {
+						"referenceName": "ds_blob_storageacc_populationgz",
+						"type": "DatasetReference"
+					},
 					"timeout": "0.00:00:30",
-					"sleep": 10
+					"sleep": 10,
+					"minimumSize": 1024
 				}
 			}
 		],
