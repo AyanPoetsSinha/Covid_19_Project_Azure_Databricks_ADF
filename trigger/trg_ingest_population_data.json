@@ -2,7 +2,7 @@
 	"name": "trg_ingest_population_data",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipelines": [],
 		"type": "BlobEventsTrigger",
 		"typeProperties": {
