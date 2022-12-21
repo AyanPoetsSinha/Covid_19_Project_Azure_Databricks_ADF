@@ -150,6 +150,45 @@
 									"type": "DatasetReference"
 								}
 							]
+						},
+						{
+							"name": "Delete SOurce File",
+							"type": "Delete",
+							"dependsOn": [
+								{
+									"activity": "Copy Population Data1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"dataset": {
+									"referenceName": "ds_blob_storageacc_populationgz",
+									"type": "DatasetReference"
+								},
+								"logStorageSettings": {
+									"linkedServiceName": {
+										"referenceName": "ls_blob_covidreportingsa_gz",
+										"type": "LinkedServiceReference"
+									},
+									"path": ""
+								},
+								"enableLogging": true,
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								}
+							}
 						}
 					]
 				}
