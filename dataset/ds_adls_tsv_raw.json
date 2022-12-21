@@ -1,21 +1,19 @@
 {
-	"name": "ds_blob_storageacc_populationgz",
+	"name": "ds_adls_tsv_raw",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_blob_covidreportingsa_gz",
+			"referenceName": "ls_adls_covidreportingdl",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"fileName": "population_by_age.tsv.gz",
-				"container": "population"
+				"type": "AzureBlobFSLocation",
+				"fileName": "population.tsv",
+				"fileSystem": "raw"
 			},
 			"columnDelimiter": "\t",
-			"compressionCodec": "gzip",
-			"compressionLevel": "Optimal",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
