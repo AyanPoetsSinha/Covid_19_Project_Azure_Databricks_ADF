@@ -19,6 +19,10 @@
 			"type": "string",
 			"defaultValue": "https://ayancovidreportingdl.dfs.core.windows.net/"
 		},
+		"trg_ingest_population_data_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/39aaf5a9-c6f8-4fe6-85d7-ab4422ae963e/resourceGroups/Covid19Tracker/providers/Microsoft.Storage/storageAccounts/ayancovidreportingsa"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -54,6 +58,9 @@
 					},
 					"ls_adls_covidreportingdl_properties_typeProperties_url": {
 						"value": "[parameters('ls_adls_covidreportingdl_properties_typeProperties_url')]"
+					},
+					"trg_ingest_population_data_properties_typeProperties_scope": {
+						"value": "[parameters('trg_ingest_population_data_properties_typeProperties_scope')]"
 					}
 				}
 			},
