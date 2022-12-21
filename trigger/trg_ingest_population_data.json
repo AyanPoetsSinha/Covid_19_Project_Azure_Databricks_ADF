@@ -1,5 +1,5 @@
 {
-	"name": "trigger1",
+	"name": "trg_ingest_population_data",
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Stopped",
